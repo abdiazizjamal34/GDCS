@@ -44,7 +44,7 @@ div.task{
 }
 div.task.done{
     opacity: 0.5;
-    
+    fill: rgb(255, 255, 255);
    
 }
 div.task svg{
@@ -56,6 +56,7 @@ div.task svg{
 }
 div.task span{
     position: relative;
+   flex-grow: 1;
 }
 div.task span::before{
     content: " ";
@@ -68,7 +69,17 @@ div.task span::before{
 }
 div.task.done span::before{
     width: 100%;
+    
 }
 h1{
     text-align: center;
+}
+button.tarsh{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button.tarsh svg{
+    fill: red;
 }

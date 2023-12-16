@@ -16,6 +16,13 @@ function App() {
       setTasks(tasks);
     }
   },[]);
+
+  function deleteTask(indexrRemove){
+    setTasks(preve =>{
+      return preve.filter((taskObject,index) => index !== indexrRemove)
+      
+    });
+  }
   function addTask(name) {
     setTasks( prev =>{
       return [...prev, { name:name,done:false}];
@@ -37,7 +44,8 @@ function App() {
           <h1> {numberComplete}/{numberTotal} Completed</h1>
       <Taskform onAdd ={addTask}/>
       {tasks.map((task, index) => (
-  <Task  {...task}  onToggle={done => updateTask(index, done)} />
+  <Task  {...task}  onToggle={done => updateTask(index, done)}
+     onDelete={ () => deleteTask(index)} />
 ))}
     </main>
 
